@@ -1,0 +1,35 @@
+@media (max-width: 1366px){
+    .App{
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 960px){
+    .App{
+        max-width: 720px;
+    }
+}
+    
+.App_wrapper{
+    padding-top: 15px;
+    overflow: hidden;
+    min-height: 1000px;
+}
+
+.App{
+    grid-gap: 10px;
+    margin: auto;
+    width: 1200px;
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas:
+        "h h"
+        "s p"; 
+}
+
+.App_content{
+    grid-area: p;
+}
+
+

@@ -1,0 +1,10 @@
+.dialog{
+    display: flex;
+}
+
+
+.avatar{
+    width: 32px;
+    border-radius: 50%;
+}
+

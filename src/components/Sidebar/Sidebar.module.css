@@ -1,0 +1,25 @@
+.sidebar{
+    grid-area: s;
+    background-color: #F0F5F9;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.item{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.item a {
+    color: #0069b4;
+}
+
+.item a:hover{
+    color: #00416d;
+}
+
+.item a.active{
+    color:black;
+}

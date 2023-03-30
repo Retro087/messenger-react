@@ -1,0 +1,13 @@
+.img{
+    width: 100%;
+    vertical-align:bottom;
+    height: 200px;
+}
+
+.description_block{
+    padding: 15px;
+}
+
+.img_block{
+    height: 200px;
+}
