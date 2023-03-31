@@ -14,16 +14,21 @@ let dialogsReducer = (state = initialState, action) => {
                 id: 3,
                 message: state.newMessageBody
             }
-            state.messages.push(newMessage)
-            state.newMessageBody = ''
-            return state
-        case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.message
+            return {
+                ...state,
+                messages: [...state.messages, newMessage],
+                newMessageBody: ''
+            }
+        case UPDATE_NEW_MESSAGE_BODY: 
+            return{
+                ...state,
+                newMessageBody: action.message
+            }
         default:
             return state
     }
 }
 
 export default dialogsReducer
-export let updateNewMessageBodyActionCreator = (message) => ({type: UPDATE_NEW_MESSAGE_BODY, message: message})
-export let addMessageActionCreator = () => ({type: ADD_MESSAGE})
+export let updateNewMessageBodyAC = (message) => ({type: UPDATE_NEW_MESSAGE_BODY, message: message})
+export let addMessageAC = () => ({type: ADD_MESSAGE})

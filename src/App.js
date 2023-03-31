@@ -4,6 +4,7 @@ import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
 import {Route, Routes} from 'react-router-dom'
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 function App(props) {
@@ -14,8 +15,9 @@ function App(props) {
           <Sidebar />
           <div className='App_content'>
             <Routes>
-              <Route path='/Profile/*' element={<Profile store={props.store}/>}/>
-              <Route path='/Dialogs/*' element={<DialogsContainer store={props.store}/>}/>
+              <Route path='/Profile/*' element={<Profile/>}/>
+              <Route path='/Dialogs/*' element={<DialogsContainer/>}/>
+              <Route path='/Users/*' element={<UsersContainer/>}/>
             </Routes>
           </div>
           

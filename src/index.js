@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
@@ -12,15 +13,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let renderTree = () => {
   root.render(
     <BrowserRouter>
-      <App store={store}/>
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
 
   );
 }
 
-renderTree(store.getState())
-
-store.subscribe(() => {
-  let state = store.getState()
-  renderTree(state)
-})
+renderTree()
