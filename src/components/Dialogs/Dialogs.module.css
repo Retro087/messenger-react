@@ -2,7 +2,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: 2fr 10fr;
-    background-color: #F0F5F9;
+    background-color: #FFF;
     border-radius: 25px;
 }
 

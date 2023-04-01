@@ -4,15 +4,9 @@ import { followAC, setUsersAC, unfollowAC } from "../../redux/users-reducer";
 import Users from "./Users";
 
 let MapStateToProps = (state) => {
-    if(state.usersPage.users.followed){
-        return {
-            users: state.usersPage.users,
-            followed: 'followed'
-        }
-    }
     return {
         users: state.usersPage.users,
-        followed: 'unfollowed'
+        followed: state.usersPage.users.followed
     }
 }
 

@@ -1,9 +1,63 @@
-
-.item{
-    color:#0f3460;
+.item {
+    color: #0f3460;
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #DCDCDC;
+    padding: 5px;
 }
 
-.item img{
+.itemBody {
+    display: flex;
+}
+
+.item img {
     border-radius: 50%;
     width: 50px;
+    height: 50px;
+}
+
+.imgWrapper {
+    margin-right: 10px;
+    height: 50px;
+}
+
+.msgBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.msg {
+    font-size: 14px;
+    color: #778899;
+}
+
+.likeBtn {
+    border: none;
+    background-color: #DCDCDC;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+
+}
+
+.likeBtn:hover {
+    background-color: #bbbbbb;
+
+}
+
+.dislikeBtn {
+    border: none;
+    background-color: #778899;
+    color: #FFF;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.dislikeBtn:hover {
+    background-color: #616d7a;
+
 }

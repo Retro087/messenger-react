@@ -1,4 +1,63 @@
+
+.userWrapper{
+    display: flex;
+    margin-bottom: 10px;
+}
+
 .photo{
     width: 50px;
     height: 50px;
+    border-radius: 50px;
+}
+
+.photoWrapper{
+    width: 50px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+
+.leftSide{
+    width: 70px;
+    margin-right: 10px;
+}
+
+
+.followBtn{
+    width: 70px;
+    height: 25px;
+    color: #0069b4;
+    background-color: #FFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.followBtn:hover{
+    background-color: #F0F5F9;
+    transition: 0.2s;
+}
+
+.bodyWrapper{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+.name{
+    color:#3593d6;
+    margin-bottom: 25px;
+}
+
+.status{
+    color:cadetblue
+}
+
+.country{
+    margin-bottom: 10px;
 }
