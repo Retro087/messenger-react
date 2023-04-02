@@ -64,4 +64,16 @@
 
 .selectedPage{
     font-weight: bold;
+    margin: 2px;
+}
+.selectedPage:hover{
+    cursor: pointer;
+}
+
+.pageNumber{
+    margin: 2px;
+}
+
+.pageNumber:hover{
+    cursor: pointer;
 }
