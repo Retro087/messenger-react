@@ -2,10 +2,12 @@ const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const LIKE = 'LIKE'
 const DISLIKE = 'DISLIKE'
+const SET_USER_PROFILE = 'SET_USER_PROFILE'
 
 let initialState = {
     posts: [{ id: 1, name: 'Vladimir', message: 'hello', likes: 0, liked: false }, { id: 2, name: 'Dimon', message: 'first post)', likes: 0, liked: false}],
-    newPostText: ''
+    newPostText: '',
+    userProfile: null
 }
 
 let profileReducer = (state = initialState, action) => {
@@ -51,6 +53,11 @@ let profileReducer = (state = initialState, action) => {
                     return el
                 })
             }
+        case SET_USER_PROFILE:
+            return {
+                ...state,
+                userProfile: action.userProfile
+            }
         default:
             return state
     }
@@ -61,3 +68,4 @@ export let addPostAC = () => ({type: ADD_POST})
 export let updateNewPostTextAC = (text) => ({type: UPDATE_NEW_POST_TEXT, text: text})
 export let likePostAC = (postId) => ({type: LIKE, postId})
 export let disLikePostAC = (postId) => ({type: DISLIKE, postId})
+export let setUserProfile = (userProfile) => ({type: SET_USER_PROFILE, userProfile})

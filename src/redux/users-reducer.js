@@ -10,7 +10,7 @@ let initialState = {
     pageSize: 4,
     totalUsersCount: 0,
     currentPage: 1,
-    isFetching: true
+    isFetching: false
 }
 
 let UsersReducer = (state = initialState, action) => {
@@ -50,10 +50,10 @@ let UsersReducer = (state = initialState, action) => {
     }
 }
 
-export const followAC = (id) => ({ type: FOLLOW, id })
-export const unfollowAC = (id) => ({ type: UNFOLLOW, id })
-export const setUsersAC = (users) => ({ type: SET_USERS, users })
-export const setCurrentPageAC = (pageNumber) => ({type: SET_CURRENT_PAGE, currentPage: pageNumber})
-export const setTotalUsersCountAC = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount})
-export const setIsFetchingAC = (isFetching) => ({type: SET_IS_FETCHING, isFetching})
+export const follow = (id) => ({ type: FOLLOW, id })
+export const unfollow = (id) => ({ type: UNFOLLOW, id })
+export const setUsers = (users) => ({ type: SET_USERS, users })
+export const setCurrentPage = (pageNumber) => ({type: SET_CURRENT_PAGE, currentPage: pageNumber})
+export const setTotalUsersCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount})
+export const setIsFetching = (isFetching) => ({type: SET_IS_FETCHING, isFetching})
 export default UsersReducer

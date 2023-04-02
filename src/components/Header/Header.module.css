@@ -2,8 +2,15 @@
     grid-area: h;
     background-color: #FFF;
     border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header img{
     width: 50px;
+}
+
+.login{
+    font-weight: 700;
 }
