@@ -1,3 +1,5 @@
+import { profileAPI } from "../components/api/api"
+
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const LIKE = 'LIKE'
@@ -69,3 +71,11 @@ export let updateNewPostTextAC = (text) => ({type: UPDATE_NEW_POST_TEXT, text: t
 export let likePostAC = (postId) => ({type: LIKE, postId})
 export let disLikePostAC = (postId) => ({type: DISLIKE, postId})
 export let setUserProfile = (userProfile) => ({type: SET_USER_PROFILE, userProfile})
+export let getProfile = (id) => {
+    return (dispatch) => {
+        profileAPI.getProfile(id)
+            .then(data => {
+                dispatch(setUserProfile(data))
+            })
+    }
+}
