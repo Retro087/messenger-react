@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './Users.module.css'
-import userPhoto from '../../assets/img/user.png'
+import userPhoto from '../../assets/img/default-profile.png'
 import { NavLink } from "react-router-dom";
 
 let Users = (props) => {
@@ -10,7 +10,7 @@ let Users = (props) => {
     let pages = []
     let j = 0
     let i = 1
-    while (j !== 5) {
+    while (j !== 25) {
         pages.push(i)
         i++
         j++
@@ -42,10 +42,6 @@ let Users = (props) => {
                         <div>
                             <div className={styles.name}>{u.name}</div>
                             <div className={styles.status}>{u.status}</div>
-                        </div>
-                        <div>
-                            <div className={styles.country}>{'u.location.country'}</div>
-                            <div className={styles.city}>{'u.location.city'}</div>
                         </div>
                     </div>
                 </div>

@@ -37,5 +37,16 @@ export const authAPI = {
     authMe() {
         return instance.get(`auth/me`)
             .then(response => response.data)
+    }   
+}
+
+export const statusAPI = {
+    getStatus(id){
+        return instance.get(`profile/status/${id}`)
+            .then(response => response.data)
+    },
+    setStatus(status){
+        return instance.put(`profile/status/`, {status: status})
+            .then(response => response.data)
     }
 }

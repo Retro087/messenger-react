@@ -20,7 +20,7 @@ let authReducer = (state = initialState, action) => {
                 isAuthorized: true
             }
         case SET_AUTH_PROFILE:
-
+            debugger
             return {
                 ...state,
                 userProfile: action.profile

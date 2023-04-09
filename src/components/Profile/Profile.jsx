@@ -8,7 +8,7 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo"
 function Profile(props){
     return(
         <div className={s.profile}>
-            <ProfileInfo profile={props.profile}/>
+            <ProfileInfo myId={props.myId} profile={props.profile} status={props.status} onStatusChange={props.onStatusChange}/>
             <MyPostsContainer/>
         </div>
         
