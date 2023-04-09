@@ -1,0 +1,30 @@
+.sett{
+    grid-area: s;
+    background-color: #FFF;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.btnWrapper{
+    margin-left: 15px;
+    margin-bottom: 25px;
+}
+
+.btn{
+    height: 25px;
+    border: none;
+    background-color: #DCDCDC;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    transition: 0.3s;
+    background-color: #C0C0C0;
+}
+
+.searchWrapper{
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}

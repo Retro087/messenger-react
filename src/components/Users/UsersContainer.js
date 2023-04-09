@@ -8,30 +8,31 @@ import { compose } from "redux";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize)
+        this.props.getUsers(this.props.currentPage, this.props.pageSize, this.props.onlyFriends, this.props.nameSearch)   
     }
 
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber)
-        this.props.getUsers(pageNumber, this.props.pageSize)
+        this.props.getUsers(pageNumber, this.props.pageSize, this.props.onlyFriends, this.props.nameSearch)
+    }
+
+    getOnlyFriends = (onlyFriends) => {
+        this.props.setCurrentPage(1)
+        this.props.getUsers(null, this.props.pageSize, onlyFriends, this.props.nameSearch)
+    }
+
+    getUsersByName = (name) => {
+        this.props.setCurrentPage(1)
+        this.props.getUsers(null, this.props.pageSize, this.props.onlyFriends, name)
     }
 
     render() {
         return (
             <>
-                {this.props.isFetching ? <Preloader /> : <Users onPageChanged={this.onPageChanged}
-                    currentPage={this.props.currentPage} users={this.props.users}
-                    pageSize={this.props.pageSize} totalUsersCount={this.props.totalUsersCount}
-                    followingInProgress={this.props.followingInProgress} setFollowingInProgress={this.props.setFollowingInProgress} follow={this.props.follow}
-                    unfollow={this.props.unfollow}/>}
-
+                {this.props.isFetching ? <Preloader /> : <Users getUsersByName={this.getUsersByName} getOnlyFriends={this.getOnlyFriends} onPageChanged={this.onPageChanged} {...this.props}/>}
             </>
-
         )
-
-
     }
-
 
 }
 
@@ -43,7 +44,9 @@ let MapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
         followingInProgress: state.usersPage.followingInProgress,
-        isAuth: state.auth.isAuthorized
+        isAuth: state.auth.isAuthorized,
+        onlyFriends: state.usersPage.onlyFriends,
+        nameSearch: state.usersPage.nameSearch
     }
 }
 
