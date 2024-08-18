@@ -11,6 +11,7 @@ function Header(props) {
                 <div className={s.userInfo}>
                     <div className={s.login}>{props.login}</div>
                     <img src={defaultIcon} alt="" className={s.userPhoto}/> 
+                    <button onClick={props.logOut}>Выйти из аккаунта</button>
                 </div>
                 : <NavLink to='/login' className={s.auth}>Login</NavLink>}
         </header>

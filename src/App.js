@@ -6,6 +6,9 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
+import { authAPI } from './components/api/api';
+import { authorized } from './redux/auth-reducer';
+import LoginContainer from './components/Login/Login';
 
 
 function App(props) {
@@ -20,7 +23,7 @@ function App(props) {
               <Route path='/profile/*' element={<ProfileContainer/>}/>
               <Route path='/dialogs/*' element={<DialogsContainer/>}/>
               <Route path='/users/*' element={<UsersContainer/>}/>
-              <Route path='/login' element={<Login/>}/>
+              <Route path='/login' element={<LoginContainer/>}/>
             </Routes>
           </div>
           

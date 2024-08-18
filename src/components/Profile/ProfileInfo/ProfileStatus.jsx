@@ -1,35 +1,48 @@
-import React from "react";
-import s from './ProfileStatus.module.css'
+import React, { useState, useEffect } from "react";
+import s from "./ProfileStatus.module.css";
 
-class Status extends React.Component{
-    state = {
-        editMode: false,
-    }
+let Status = (props) => {
+  const [editMode, setEditMode] = useState(false);
+  const [status, setStatus] = useState(props.status);
 
-    activateEditMode = () => {
-        this.setState({
-            editMode: true
-        })
-    }
-    deactivateEditMode = () => {
-        this.setState({
-            editMode: false
-        })
-    }
-    onChange = (event) => {
-        let status = event.target.value;
-        this.props.onStatusChange(status)
-    }
-    render(){
-        return (
-            <div>
-                <div>
-                    {this.props.myId === this.props.profile.userId ? this.state.editMode ? <input onChange={this.onChange} className={s.input} onBlur={this.deactivateEditMode} autoFocus={true} type="text" value={this.props.status}/> : <span className={s.myStatus} onClick={this.activateEditMode}>{this.props.status}</span> 
-                    : <span className={s.status} onClick={this.activateEditMode}>{this.props.status}</span>}                 
-                </div>
-            </div>
-        )
-    }
-}
+  let onChange = (event) => {
+    let newStatus = event.target.value;
+    props.onStatusChange(newStatus);
+  };
 
-export default Status
+  let onBlur = () => {
+    setEditMode(false);
+  };
+
+  return (
+    <div>
+      <div>
+        {props.myId === props.profile.userId ? (
+          editMode ? (
+            <input
+              autoFocus={true}
+              className={s.input}
+              onBlur={onBlur}
+              onChange={onChange}
+              type="text"
+              value={props.status}
+            />
+          ) : (
+            <span
+              className={s.myStatus}
+              onClick={() => {
+                setEditMode(true);
+              }}
+            >
+              {props.status}
+            </span>
+          )
+        ) : (
+          <span className={s.status}>{props.status}</span>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Status;

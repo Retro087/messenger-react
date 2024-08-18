@@ -58,4 +58,4 @@ let MapDispatchToProps = {
     unfollow
 }
 
-export default compose(connect(MapStateToProps, MapDispatchToProps), withAuthRedirect)(UsersContainer)
+export default compose(connect(MapStateToProps, MapDispatchToProps))(UsersContainer)
