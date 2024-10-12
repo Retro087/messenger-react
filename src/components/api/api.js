@@ -61,3 +61,17 @@ export const statusAPI = {
       .then((response) => response.data);
   },
 };
+
+export const photoAPI = {
+  setPhoto(photos) {
+    const formData = new FormData();
+    formData.append("image", photos);
+    return instance
+      .put(`profile/photo`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => response.data);
+  },
+};

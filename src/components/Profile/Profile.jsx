@@ -21,6 +21,7 @@ function Profile(props) {
         profile={props.profile}
         status={props.status}
         onStatusChange={props.updateStatus}
+        updatePhoto={props.updatePhoto}
       />
       <MyPostsContainer />
     </div>

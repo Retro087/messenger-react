@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
-import { authorized } from "../../redux/auth-reducer";
+import { authorized } from "../../redux/auth-reducer.ts";
 import { compose } from "redux";
 import { withAuthRedirect } from "../hoc/withAuthRedirect";
 import { Navigate } from "react-router";
